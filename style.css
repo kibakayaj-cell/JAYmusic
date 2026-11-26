@@ -1,0 +1,362 @@
+
+
+
+/* JAYMUSIC MAIN DESIGN */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg: #080D18;
+    --panel: #111B2B;
+    --panel2: #172438;
+    --green: #20E678;
+    --white: #FFFFFF;
+    --muted: #98A6B9;
+    --border: #26364B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 130px;
+}
+
+button, input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.logo span {
+    color: var(--green);
+}
+
+.premium-btn,
+.main-btn {
+    background: var(--green);
+    color: #06120B;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 18px;
+    font-weight: 800;
+}
+
+/* NAVIGATION */
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+    background: var(--panel);
+    padding: 12px 5px;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.bottom-nav button {
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    padding: 8px;
+    font-size: 13px;
+}
+
+.bottom-nav button.active {
+    color: var(--green);
+    font-weight: 700;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(135deg, #172D42, #102019);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 35px 25px;
+    margin-bottom: 25px;
+}
+
+.hero small {
+    color: var(--green);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 7vw, 48px);
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.hero p {
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 550px;
+}
+
+/* SEARCH */
+
+.search-box {
+    margin-bottom: 22px;
+}
+
+.search-box input {
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    color: var(--white);
+    outline: none;
+    font-size: 15px;
+}
+
+.search-box input:focus {
+    border-color: var(--green);
+}
+
+/* CATEGORIES */
+
+.categories {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.category {
+    flex-shrink: 0;
+    background: var(--panel);
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 10px 17px;
+}
+
+.category.active {
+    background: var(--green);
+    color: #06120B;
+    border-color: var(--green);
+    font-weight: 700;
+}
+
+/* SONG SECTION */
+
+section {
+    margin-bottom: 25px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-size: 20px;
+}
+
+.section-heading small {
+    color: var(--muted);
+}
+
+.song-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+    gap: 15px;
+}
+
+/* UPLOAD */
+
+.upload-box,
+.download-status {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.upload-box h3,
+.download-status h3 {
+    margin-bottom: 12px;
+}
+
+.upload-box p,
+.download-status p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.upload-box input {
+    width: 100%;
+    margin-bottom: 15px;
+    color: var(--muted);
+}
+
+.main-btn {
+    width: 100%;
+    padding: 14px;
+}
+
+/* DOWNLOAD PROGRESS */
+
+.progress-bg {
+    width: 100%;
+    height: 9px;
+    background: var(--panel2);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: var(--green);
+    border-radius: 20px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+    padding: 20px 0;
+}
+
+/* MUSIC PLAYER */
+
+.player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #101A29;
+    border-top: 1px solid var(--border);
+    padding: 15px;
+    z-index: 100;
+}
+
+.player-content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.now-playing {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 120px;
+}
+
+.now-playing strong {
+    font-size: 14px;
+}
+
+.now-playing small {
+    color: var(--muted);
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.controls button {
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 22px;
+}
+
+.controls .play-main {
+    background: var(--green);
+    color: #06120B;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+}
+
+#seekBar {
+    width: 100%;
+    accent-color: var(--green);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* MOBILE DESIGN */
+
+@media (max-width: 600px) {
+    .app {
+        padding: 15px;
+    }
+
+    .hero {
+        padding: 28px 20px;
+    }
+
+    .song-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .player-content {
+        justify-content: space-between;
+    }
+
+    .now-playing {
+        max-width: 130px;
+        overflow: hidden;
+    }
+
+    .now-playing strong,
+    .now-playing small {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

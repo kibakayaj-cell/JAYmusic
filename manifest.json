@@ -1,0 +1,22 @@
+
+
+
+{
+  "name": "JAYmusic - Your Music. Your World.",
+  "short_name": "JAYmusic",
+  "description": "Discover and enjoy your music with JAYmusic.",
+  "start_url": "./Index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#080D18",
+  "theme_color": "#080D18",
+  "icons": [
+    {
+      "src": "./jaymusic-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -1,0 +1,190 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080D18">
+    <meta name="description" content="JAYmusic - Your Music. Your World.">
+
+    <title>JAYmusic | Music For Everyone</title>
+
+    <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">JAY<span>music</span></div>
+
+        <button class="premium-btn" id="premiumBtn" type="button">
+            GO PREMIUM
+        </button>
+    </header>
+
+    <!-- NAVIGATION -->
+    <nav class="bottom-nav">
+        <button class="active" data-page="home" type="button">🏠 Home</button>
+        <button data-page="explore" type="button">🔷 Explore</button>
+        <button data-page="library" type="button">💟 Library</button>
+        <button data-page="profile" type="button">👤 Profile</button>
+    </nav>
+
+    <!-- HOME PAGE -->
+    <main id="homePage">
+
+        <section class="hero">
+            <small>WELCOME TO JAYMUSIC</small>
+
+            <h1>Your Music.<br>Your World.</h1>
+
+            <p>
+                Discover new music, enjoy your favorite artists
+                and experience music without limits.
+            </p>
+        </section>
+
+        <!-- SEARCH -->
+        <section class="search-box">
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search songs, artists..."
+            >
+        </section>
+
+        <!-- CATEGORIES -->
+        <section class="categories">
+            <button class="category active" data-category="All" type="button">All</button>
+            <button class="category" data-category="Bongo Flava" type="button">Bongo Flava</button>
+            <button class="category" data-category="Hip Hop" type="button">Hip Hop</button>
+            <button class="category" data-category="Gospel" type="button">Gospel</button>
+            <button class="category" data-category="Afrobeats" type="button">Afrobeats</button>
+            <button class="category" data-category="Amapiano" type="button">Amapiano</button>
+        </section>
+
+        <!-- TRENDING MUSIC -->
+        <section>
+            <div class="section-heading">
+                <h2 id="sectionTittle">Trending Music</h2>
+                <small id="songCount">0 songs</small>
+            </div>
+
+            <div class="song-grid" id="songList"></div>
+        </section>
+
+        <!-- IMPORT MUSIC -->
+        <section class="upload-box">
+            <h3>🎵 Add Your Music</h3>
+
+            <p>
+                Import audio files from your phone or computer.
+                Only use music you own or have permission to use.
+            </p>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept="audio/*"
+                multiple
+            >
+
+            <button class="main-btn" id="uploadBtn" type="button">
+                + Choose Music
+            </button>
+        </section>
+
+        <!-- DOWNLOAD STATUS -->
+        <section class="download-status">
+            <h3>Free Download Plan</h3>
+
+            <p id="downloadText">2 free downloads remaining</p>
+
+            <div class="progress-bg">
+                <div class="progress-fill" id="downloadProgress"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- OTHER PAGES -->
+    <main id="otherPage" hidden>
+
+        <div class="hero">
+            <small>JAYMUSIC</small>
+
+            <h1 id="otherTittle">Explore</h1>
+
+            <p id="otherDescribtion">
+                Discover your music experience.
+            </p>
+        </div>
+
+        <div class="section-heading">
+            <h2 id="otherSectionTittle">Your Music</h2>
+        </div>
+
+        <div class="song-grid" id="otherSongList"></div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 JAYmusic. All Rights Reserved.</p>
+        <p>Your Music. Your World.</p>
+    </footer>
+
+</div>
+
+<!-- MUSIC PLAYER -->
+<section class="player">
+
+    <div class="player-content">
+
+        <div class="now-playing">
+            <strong id="nowTittle">No song playing</strong>
+            <small id="nowArtist">Select a song to begin</small>
+        </div>
+
+        <div class="controls">
+            <button id="previuosBtn" type="button" aria-label="Previous">⏮️</button>
+
+            <button class="play-main" id="playBtn" type="button" aria-label="Play">
+                ▶️
+            </button>
+
+            <button id="nextBtn" type="button" aria-label="Next">⏭️</button>
+        </div>
+
+        <input
+            type="range"
+            id="seekBar"
+            min="0"
+            max="100"
+            value="0"
+            aria-label="Music Progress"
+        >
+
+    </div>
+
+</section>
+
+<audio id="audioPlayer"></audio>
+
+<script src="script.js"></script>
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+            .catch(error => console.log("Service Worker:", error));
+    });
+}
+</script>
+</body>
+</html>
